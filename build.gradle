@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group 'net.altarise'
+
+version '1.0.0-SNAPSHOT'
+
+
+repositories {
+    maven {
+        url "https://gitlab.com/api/v4/groups/13022841/-/packages/maven"
+        name "GitLab"
+        credentials(HttpHeaderCredentials) {
+            name = 'Deploy-Token'
+            value = 'RbcJLFH_KvGNWAUAWtg-'
+        }
+        authentication {
+            header(HttpHeaderAuthentication)
+        }
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Jar) {
+    //C:\Users\Matheo\Documents\Serveurs\MC\MCLOCAL\plugins
+    destinationDir = file("C:/Users/Matheo/Documents/Serveurs/MC/MCLOCAL/plugins")
+}
+
+
+dependencies {
+    compileOnly 'net.altarise:altarise-spigot:1.8.8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

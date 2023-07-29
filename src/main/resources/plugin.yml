@@ -1,0 +1,12 @@
+author: Baxy
+name: GameBuilder
+version: 1.0
+main: net.altarise.gb.GameBuilder
+description: A game builder plugin for Minecraft
+commands:
+  world:
+    description: A command to teleport to a world
+    aliases: [w]
+  bedwars:
+    description: A command to teleport to create a bedward world
+    aliases: [bw]
